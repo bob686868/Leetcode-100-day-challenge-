@@ -105,29 +105,28 @@ def numSubarraysOfSizeKAndAvGreaterThenThreshold(nums,k,threshold):
 print(numSubarraysOfSizeKAndAvGreaterThenThreshold([2,2,2,2,5,5,5,8],3,4))
 print(numSubarraysOfSizeKAndAvGreaterThenThreshold([11,13,17,23,29,31,7,5,2,3],3,5))
 
-def deleteNode(self, root, key):
+def deleteNode(root, key):
         def nodeSearcher(node):
             if not node : return None
             if node.val==key:
                 if node.right:
-                    if node.left:
-                        rightestNode=deepestRightNode(node.left)
-                        rightestNode.right=node.right.left
-                    return node.right
-                return node.left
+                    successor=getSuccessor(node)
+                    node.val=successor
+                else:
+                    return node.left
             elif node.val>key:node.left=nodeSearcher(node.left) 
             else : node.right = nodeSearcher(node.right) 
             return node
             
-        def deepestRightNode(node):
-            while node.right:
-                node=node.right
-            return node
-
         def getSuccessor(node):
             cur=node.right
-            while cur :cur=cur.right
-            return cur 
+            prev=node
+            while cur.left:
+                prev=cur                
+                cur=cur.left
+            if prev != node :prev.left=prev.left.right
+            else:prev.right=prev.right.right
+            return cur.val 
         
-        node=nodeSearcher(root)
-        return root 
+        newRoot=nodeSearcher(root)
+        return newRoot 
