@@ -196,8 +196,8 @@ def binary_subarray_with_sum(nums,target):
 
     return res
 
-print(binary_subarray_with_sum([1,0,1,0,1],2))
-print(binary_subarray_with_sum([0,0,0,0,0],0))
+# print(binary_subarray_with_sum([1,0,1,0,1],2))
+# print(binary_subarray_with_sum([0,0,0,0,0],0))
 
     
 
