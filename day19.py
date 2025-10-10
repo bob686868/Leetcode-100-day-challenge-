@@ -26,24 +26,27 @@ class ListNode:
         self.next = next
 
 def merge_in_between_zeros(root):
-    cur=root
-    while cur and cur.val!=0 :
-        cur=cur.next
-    if not cur:
+        cur=root.next
+        first_modification=True
+
+        cur_sum=0
+        while cur:
+            if cur.val==0:
+                if first_modification:
+                    newNode=ListNode(cur_sum)
+                    root=newNode
+                    prev=root
+                    first_modification=False
+                    cur_sum=0
+                else:
+                    newNode=ListNode(cur_sum)
+                    prev.next=newNode
+                    prev=newNode
+                    cur_sum=0
+            else:
+                cur_sum+=cur.val
+            cur=cur.next
         return root
-    prev=cur
-    cur_sum=0
-    while cur:
-        if cur.val==0:
-            newNode=ListNode(cur_sum)
-            prev.next=newNode
-            newNode.next=cur
-            prev=cur
-            cur_sum=0
-        else:
-            cur_sum+=cur.val
-        cur=cur.next
-    return root
 
 
 
