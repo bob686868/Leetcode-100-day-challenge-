@@ -146,8 +146,8 @@ def combation_sum_2(candidates,target):
         return res
     return dfs(0,target)
 
-# print(combation_sum_2([10,1,2,7,6,1,5],8))
-# print(combation_sum_2([2,5,2,1,2],5))
+print(combation_sum_2([10,1,2,7,6,1,5],8))
+print(combation_sum_2([2,5,2,1,2],5))
 
 
 
