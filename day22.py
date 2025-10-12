@@ -121,7 +121,6 @@ def linked_list_in_binary_tree(head,root): ## root is the actual binary tree roo
 
 
             else:
-                new_head=head
                 stack.append((head,bt_node.left))
                 stack.append((head,bt_node.right))
         return False
