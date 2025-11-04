@@ -120,5 +120,5 @@ def minOpsToMakeOnes(nums):
     return -1
    
     
-print(minOpsToMakeOnes([0,1,1,1,0,0]))
-print(minOpsToMakeOnes([0,1,1,1]))
+# print(minOpsToMakeOnes([0,1,1,1,0,0]))
+# print(minOpsToMakeOnes([0,1,1,1]))
