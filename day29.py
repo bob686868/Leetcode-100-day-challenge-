@@ -128,33 +128,3 @@ def minimumCostWalk(n,edges,queries):
 # print(minimumCostWalk(5,[[0,1,7],[1,3,7],[1,2,1]],[[0,3],[3,4]]))
 # print(minimumCostWalk(3,[[0,2,7],[0,1,15],[1,2,6],[1,2,1]],[[1,2]]))
 
-import heapq
-def numberOfWayToArriveAtDestination(n,roads):
-    adj=defaultdict(list)
-    for src,dst,w in roads:
-        adj[src].append((dst,w))
-        adj[dst].append((src,w))
-    minCost=float('inf')
-    minHeap=[(0,0)] ## (curCost,curNode)
-    best=[float('inf')]*n
-    best[0]=0
-    res=0
-
-    while minHeap:
-        curCost,curNode=heapq.heappop(minHeap)
-        if curCost>minCost:
-            break
-    
-        if curNode==n-1:
-            minCost=curCost
-            res+=1
-        
-        for nei,w in adj[curNode]:
-            newCost=curCost+w
-            if newCost<=best[nei]:
-                best[nei]=newCost
-                heapq.heappush(minHeap,(newCost,nei))
-    return res
-
-print(numberOfWayToArriveAtDestination(7,[[0,6,7],[0,1,2],[1,2,3],[1,3,3],[6,3,3],[3,5,1],[6,5,1],[2,5,1],[0,4,5],[4,6,2]]))
-print(numberOfWayToArriveAtDestination(2,[[1,0,10]]))
