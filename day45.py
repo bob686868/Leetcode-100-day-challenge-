@@ -111,7 +111,7 @@ def lc322(coins,amount):
                 dp[i]=min(dp[i-c]+1,dp[i])
     return dp[-1] if dp[-1]!=float('inf') else -1
 
-print(lc322([1,2,5],11))
-print(lc322([2],3))
+# print(lc322([1,2,5],11))
+# print(lc322([2],3))
 
 
