@@ -20,5 +20,5 @@ def lc2211(directions):
             accumulator=0
     return res
 
-print(lc2211("RLRSLL"))
+# print(lc2211("RLRSLL"))
 # print(lc2211("LLRR"))
