@@ -9,7 +9,7 @@ def lc3531(n,buildings):
             maxX[by]=bx
         if bx not in minY:
             minY[bx]=by
-            maxY[bx]=by
+            maxY[bx]=byday61.
         minX[by]=min(bx,minX[by])
         maxX[by]=max(bx,maxX[by])
         minY[bx]=min(by,minY[bx])
